@@ -53,7 +53,8 @@
             <input type="text" class="form-control" id="phone" value="<?php echo $attendee['contactnumber']?>" name="phone">
             <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
         </div>
-            <button type="submit" name="submit" class="btn btn-primary">Submit Changes</button>
+            <a href="viewrecords.php" class="btn btn-default">Back To List</a>
+            <button type="submit" name="submit" class="btn btn-success">Submit Changes</button>
     </form>
 
 <?php require_once 'includes/footer.php'?>
