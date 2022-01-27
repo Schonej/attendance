@@ -8,9 +8,9 @@
 
     //Remote database connection
     $host = 'sql3.freesqldatabase.com';
-    $db = 'sql3467875';
-    $user = 'sql3467875';
-    $password = 'yVBklA71ZQ';
+    $db = 'sql3468332';
+    $user = 'sql3468332';
+    $password = 'Please wait';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
