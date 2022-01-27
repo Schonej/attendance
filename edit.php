@@ -2,6 +2,7 @@
 <?php
  require_once 'includes/header.php';
  require_once 'db/conn.php';
+ require_once 'includes/auth_check.php';
 
  $result = $crud->getSpecialties();
  if(!isset($_GET['id'])){

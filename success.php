@@ -11,8 +11,15 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $specialty = $_POST['speciality'];
+
+    $org_file = $_FILES["avatar"]["tmp_name"];
+    $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'uploads/';
+    $destination = "$target_dir$phone.$ext";
+    move_uploaded_file($org_file, $destination);
+
     //call function to insert and track if success or not
-    $isSuccess = $crud->insertAttendees($fname,$lname,$datepicker,$email,$phone,$specialty);
+    $isSuccess = $crud->insertAttendees($fname,$lname,$datepicker,$email,$phone,$specialty, $destination);
 
     if($isSuccess){
       include 'includes/successmessage.php';
@@ -37,7 +44,7 @@
     <a href="#" class="card-link">Another link</a>
   </div>
 </div> -->
-
+<img src="<?php echo $destination?>" style="width: 50%"/>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST['firstname'] .' '. $_POST['lastname'];?></h5>

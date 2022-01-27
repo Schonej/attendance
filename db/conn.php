@@ -1,17 +1,17 @@
 <?php 
     //development connection
-    // $host = '127.1.0.1';
-    // $db = 'attendance_db';
-    // $user = 'root';
-    // $password = '';
-    // $charset = 'utf8mb4';
-
-    //Remote database connection
-    $host = 'sql3.freesqldatabase.com';
-    $db = 'sql3467875';
-    $user = 'sql3467875';
-    $password = 'yVBklA71ZQ';
+    $host = '127.1.0.1';
+    $db = 'attendance_db';
+    $user = 'root';
+    $password = '';
     $charset = 'utf8mb4';
+
+    // //Remote database connection
+    // $host = 'sql3.freesqldatabase.com';
+    // $db = 'sql3467875';
+    // $user = 'sql3467875';
+    // $password = 'yVBklA71ZQ';
+    // $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
@@ -24,5 +24,9 @@
 
     
     require_once 'crud.php';
+    require_once 'user.php';
     $crud = new crud($pdo);
+    $user = new user($pdo);
+
+    $user->insertUser("admin", "password");
 ?>

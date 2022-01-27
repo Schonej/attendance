@@ -2,6 +2,7 @@
 <?php
  require_once 'includes/header.php';
  require_once 'db/conn.php';
+ require_once 'includes/auth_check.php';
 
  if(!isset($_GET['id'])){
   include 'includes/errormessage.php';
@@ -10,7 +11,7 @@
   $result = $crud->getAttendeeDetails($id);
  
 ?>
-
+<img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'] ; ?>" style="width: 20%;" />
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><?php echo $result['firstname'] .' '. $result['lastname'];?></h5>

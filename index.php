@@ -10,7 +10,7 @@
     <h1 class="text-center">Registration for IT Conference</h1>
 
 
-    <form method="post" autocomplete="off" action="success.php">
+    <form method="post" autocomplete="off" action="success.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input required type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="firstname">
@@ -41,6 +41,12 @@
             <input required type="text" class="form-control" id="phone" placeholder="Enter Contact Number" name="phone">
             <small id="emailHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
         </div>
+        <br>
+        <div class="custom-file">
+            <input type="file" accept = "img/*" class="custom-file-input" id="avatar" name="avatar">
+            <label class="custom-file-label" for="avatar"></label>
+        </div>
+        <br>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
 
